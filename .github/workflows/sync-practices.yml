@@ -30,12 +30,12 @@ jobs:
 
       - name: Сохранить обновлённый каталог
         run: |
-          if git diff --quiet -- site/data.js; then
+          if git diff --quiet -- data.js; then
             echo "Изменений в таблице нет."
             exit 0
           fi
           git config user.name "rkzh-catalog-bot"
           git config user.email "rkzh-catalog-bot@users.noreply.github.com"
-          git add site/data.js
+          git add data.js
           git commit -m "Автоматическое обновление практик"
           git push
