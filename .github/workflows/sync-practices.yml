@@ -1,0 +1,41 @@
+name: Обновить каталог практик
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */6 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Забрать файлы сайта
+        uses: actions/checkout@v4
+
+      - name: Установить Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Установить средство чтения Excel
+        run: npm install --no-save xlsx@0.18.5
+
+      - name: Скачать таблицу и обновить каталог
+        env:
+          YANDEX_PUBLIC_URL: ${{ vars.YANDEX_PUBLIC_URL }}
+        run: node scripts/sync-practices-from-yandex.mjs
+
+      - name: Сохранить обновлённый каталог
+        run: |
+          if git diff --quiet -- site/data.js; then
+            echo "Изменений в таблице нет."
+            exit 0
+          fi
+          git config user.name "rkzh-catalog-bot"
+          git config user.email "rkzh-catalog-bot@users.noreply.github.com"
+          git add site/data.js
+          git commit -m "Автоматическое обновление практик"
+          git push
