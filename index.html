@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Библиотека лучших практик</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="site-strip">
+          <span class="site-label">Библиотека лучших практик</span>
+          <div class="site-nav">
+            <a href="https://smarteka.com/" target="_blank" rel="noreferrer">Смартека <span>↗</span></a>
+            <button id="reload-data" class="reload-button" type="button" title="Обновить данные из таблицы">Обновить данные</button>
+          </div>
+        </div>
+        <div class="partners-bar" aria-label="Партнеры проекта">
+          <img src="assets/presidential-academy.png" alt="Президентская академия" class="partner-logo academy-logo" />
+          <img src="assets/vshgu.png" alt="Высшая школа государственного управления" class="partner-logo vshgu-logo" />
+          <img src="assets/asi.png" alt="Агентство стратегических инициатив" class="partner-logo asi-logo" />
+          <img src="assets/public-capital.png" alt="Общественный капитал" class="partner-logo capital-logo" />
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="intro">
+        <div class="intro-content">
+            <p class="eyebrow">Рейтинг качества жизни</p>
+            <h1>Лучшие практики<br />для <span>качества жизни</span></h1>
+          </div>
+        </section>
+
+        <section class="directions" aria-label="Направления РКЖ">
+          <div class="section-heading"><h2>Направления</h2><span id="header-count">-</span></div>
+          <div class="summary-grid" id="summary-grid"></div>
+        </section>
+
+        <section class="explorer" aria-label="Каталог практик">
+          <div class="section-heading explorer-heading"><h2>Каталог решений</h2><button id="international-toggle" class="toggle-button" type="button" aria-pressed="false"><span class="toggle-indicator"></span>Международные практики</button></div>
+          <div class="filters-panel">
+            <label class="search-box"><span class="search-icon" aria-hidden="true"></span><input id="search" type="search" placeholder="Поиск по названию, стране, проблеме или механизму" autocomplete="off" /></label>
+            <div class="filter-row">
+              <label><span>Направление</span><select id="direction-filter"></select></label>
+              <label><span>Страна</span><select id="country-filter"></select></label>
+              <label><span>Фактор РКЖ</span><select id="factor-filter"></select></label>
+              <button id="reset-filters" class="reset-button" type="button">Очистить фильтры</button>
+            </div>
+          </div>
+          <div class="catalog-status"><span id="results-count"></span><span class="status-divider"></span><span id="active-filter-text">Все направления</span></div>
+          <div class="catalog-layout"><div id="practice-list" class="practice-list" aria-live="polite"></div><aside id="detail-panel" class="detail-panel" aria-live="polite"></aside></div>
+        </section>
+      </main>
+      <footer><span>Библиотека лучших практик</span><span>Рейтинг качества жизни</span><span>Президентская академия · ВШГУ</span></footer>
+    </div>
+    <button id="back-to-top" class="back-to-top" type="button" aria-label="Вернуться к началу страницы">↑ <span>Наверх</span></button>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

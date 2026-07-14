@@ -1,0 +1,38 @@
+<!--
+  Вставьте код в T123 на Tilda.
+  Перед вставкой замените CATALOG_URL на HTTPS-адрес опубликованного каталога.
+  Пример: https://practices.example.ru/
+-->
+<div class="vshgu-practices-embed">
+  <iframe
+    src="CATALOG_URL"
+    title="Библиотека лучших практик"
+    loading="eager"
+    allow="fullscreen"
+  ></iframe>
+</div>
+
+<style>
+  .vshgu-practices-embed {
+    width: 100%;
+    height: 100vh;
+    min-height: 780px;
+    overflow: hidden;
+    background: #ffffff;
+  }
+
+  .vshgu-practices-embed iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: #ffffff;
+  }
+
+  @media screen and (max-width: 640px) {
+    .vshgu-practices-embed {
+      height: 100svh;
+      min-height: 620px;
+    }
+  }
+</style>
