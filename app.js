@@ -1,5 +1,5 @@
 let practices = [];
-const YANDEX_PUBLIC_URL = "https://disk.360.yandex.ru/i/bb4_n7M_j4k5Eg";
+const YANDEX_PUBLIC_URL = "https://disk.360.yandex.ru/edit/d/WAu8elrjmyRZuLcBz-33riPegnqahzm72s0qoIz-cKg6UlV3QTFja3BWUQ";
 const state = { search: "", direction: "", country: "", factor: "", international: false, selectedId: null };
 const directionStyles = {
   "Работа и свое дело": { color: "#00aeef" },
