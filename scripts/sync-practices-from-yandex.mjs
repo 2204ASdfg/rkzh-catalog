@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import * as XLSX from "xlsx";
 
 const publicUrl = process.env.YANDEX_PUBLIC_URL;
-const outputPath = "site/data.js";
+const outputPath = "data.js";
 
 if (!publicUrl) {
   throw new Error("Не задана переменная YANDEX_PUBLIC_URL.");
