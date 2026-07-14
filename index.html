@@ -59,7 +59,9 @@
       <footer><span>Библиотека лучших практик</span><span>Рейтинг качества жизни</span><span>Президентская академия · ВШГУ</span></footer>
     </div>
     <button id="back-to-top" class="back-to-top" type="button" aria-label="Вернуться к началу страницы">↑ <span>Наверх</span></button>
-    <script src="data.js"></script>
-    <script src="app.js"></script>
+<script>
+  document.write(`<script src="data.js?updated=${Date.now()}"><\/script>`);
+</script>
+<script src="app.js"></script>
   </body>
 </html>
